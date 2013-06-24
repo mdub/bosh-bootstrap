@@ -19,7 +19,7 @@ require "bosh-bootstrap/cli/helpers"
 #   microbosh.deploy("aws", settings)
 class Bosh::Bootstrap::Microbosh
   include FileUtils
-  include Bosh::Bootstrap::Cli::Helpers::Bundle
+  include Bosh::Bootstrap::Cli::Helpers
 
   attr_reader :base_path
   attr_reader :provider
@@ -47,12 +47,6 @@ class Bosh::Bootstrap::Microbosh
 
   def create_microbosh_yml(settings)
     provider.create_microbosh_yml(settings)
-  end
-
-  def sh(*command)
-    command = command.flatten
-    puts "$ #{command.join(' ')}"
-    system(*command) || raise("Error running: #{command.inspect}")
   end
 
   def deploy_or_update(bosh_name, stemcell)
