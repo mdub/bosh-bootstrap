@@ -51,7 +51,8 @@ class Bosh::Bootstrap::Microbosh
 
   def sh(*command)
     command = command.flatten
-    system(command) || raise("Error running: #{command.inspect}")
+    puts "$ #{command.join(' ')}"
+    system(*command) || raise("Error running: #{command.inspect}")
   end
 
   def deploy_or_update(bosh_name, stemcell)
