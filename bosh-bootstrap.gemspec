@@ -27,6 +27,9 @@ EOS
   gem.add_dependency "readwritesettings", "~> 3.0"
   gem.add_dependency "thor", "~> 0.18"
   gem.add_dependency "redcard"
+  gem.add_dependency "bosh"
+  gem.add_dependency "bosh_cli_plugin_micro"
+
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "fakeweb"
